@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>gauge</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<script type="text/javascript" src="Chart.min.js"></script>
+	</head>
+	<body>
+		<div class="col-md-8 offset-md-3 my-5">
+			<div class="card">
+			  <div class="card-body">
+				<canvas id="myChart"></canvas>
+			  </div>
+			</div>
+		  </div>
+
+		  <script>
+			var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'doughnut',
+
+        // The data for our dataset
+        data: {
+            labels: ["Green Score"],
+            datasets: [{
+                label: "Your Green",
+                backgroundColor: ['green', 'rgb(250, 250, 250)'],
+                borderColor: '#fff',
+                data: [75, 25],
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            circumference: 1 * Math.PI,
+            rotation: 1 * Math.PI,
+            cutoutPercentage: 90
+        }
+    });
+			</script>
+	</body>
+</html>
